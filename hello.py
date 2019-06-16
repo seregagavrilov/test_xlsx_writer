@@ -9,8 +9,13 @@ from openpyxl.workbook import Workbook
 TORG_12_TABLE_CELLS = {
     'row_number': {'A': ['A', 'C']},
     'product_name': {'D': ['D','S']},
+    'kod': {'T': ['T', 'W']},
     'measurement': {'X': ['X', 'AB']},
     'okey_kod': {'AC': ['AC', 'AG']},
+    'packaging_type': {'AH': ['AH', 'AL']},
+    'place': {'AM': ['AM', 'AQ']},
+    'count_in_place': {'AR': ['AR', 'AV']},
+    'mass': {'AW': ['AW', 'BA']},
     'count': {'BB': ['BB', 'BG']},
     'coast': {'BH': ['BH', 'BP']},
     'sum_without_vat': {'BQ':['BQ', 'BW']},
@@ -338,16 +343,31 @@ def get_sheet(workk_book):
 
 def style_cell(sheet, cell):
     sheet[cell].border = Border(
-        left=Side(style='medium'),
-        right=Side(style='medium'),
-        top=Side(style='medium'),
-        bottom=Side(style='medium')
+        left=Side(style='thin'),
+        right=Side(style='thin'),
+        top=Side(style='thin'),
+        bottom=Side(style='thin')
     )
-    sheet[cell].alignment = Alignment(horizontal="center", vertical="center")
+    sheet[cell].alignment = Alignment(
+                    horizontal='general',
+                    vertical='bottom',
+                    text_rotation=0,
+                    wrap_text=False,
+                    shrink_to_fit=False,
+                    indent=0)
+
+    # sheet[cell].font
 
 
 def fill_profuct_table(sheet):
-    for row in range(31, 38):
+    count = 0
+    ws = work_book.active
+    for row in range(31, 50):
+        ws.insert_rows(row)
+        rd = ws.row_dimensions[row]  # get dimension for row 3
+        rd.height = 12
+        # rd.customFormat =False
+        # rd.customHeight = False
         for key, val in TORG_12_TABLE_CELLS.items():
             dict_cells = TORG_12_TABLE_CELLS.get(key)
             for simple_cell, merge_cell in dict_cells.items():
@@ -356,10 +376,9 @@ def fill_profuct_table(sheet):
                 sheet.merge_cells(merg_cell)
                 style_cell(sheet, cell)
                 sheet[cell].value = 'val' + str(row)
-
 if __name__ == '__main__':
     work_book = openpyxl.load_workbook(
-        'торг-12 новый.xlsx',
+        'torg-12.xlsm',
     )
 
     # wb = Workbook()
@@ -368,4 +387,4 @@ if __name__ == '__main__':
 
     fill_profuct_table(sheet)
     fill_cells(sheet)
-    work_book.save('text3.xlsx')
+    work_book.save('test_home_look.xlsx')
