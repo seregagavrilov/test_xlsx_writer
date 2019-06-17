@@ -1,6 +1,7 @@
 import openpyxl
 from openpyxl.styles.borders import Border, Side
 from openpyxl.styles import Alignment, Font
+import re
 
 TORG_12_TABLE_CELLS = {
     'row_number': {'A': ['A', 'C']},
@@ -86,6 +87,13 @@ def style_cell(sheet, cell):
                  color='FF000000')
 
 
+def delete_merged_cell(cell):
+    for i in sheet.merged_cells.ranges:
+        # if cell in i.__str__():
+        if re.findall(r'(%s)' % cell, i.__str__()):
+            sheet.merged_cells.ranges.remove(i)
+            break
+
 def fill_profuct_table(sheet):
     ws = work_book.active
     for row in range(31, 50):
@@ -97,6 +105,7 @@ def fill_profuct_table(sheet):
             for simple_cell, merge_cell in dict_cells.items():
                 merg_cell = merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)
                 cell = simple_cell + str(row)
+                delete_merged_cell(cell)
                 sheet.merge_cells(merg_cell)
                 style_cell(sheet, cell)
                 sheet[cell].value = 'val' + str(row)
@@ -110,7 +119,6 @@ if __name__ == '__main__':
     # wb = Workbook()
     # work_book = wb.active
     sheet = work_book.active
-
     fill_profuct_table(sheet)
     fill_cells(sheet)
     work_book.save('test_home_look.xlsx')
