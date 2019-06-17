@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0a82a26-3122-47ba-9f25-1e49e278ef81" name="Default Changelist" comment="">
+    <list default="true" id="950a858d-6b69-492d-96d9-7b674f21eb42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/add_table.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.text2.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.test_home_look.xlsx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_home_look.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/torg-12.xlsm" beforeDir="false" afterPath="$PROJECT_DIR$/torg-12.xlsm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="366" column="10" selection-start-line="366" selection-start-column="8" selection-end-line="366" selection-end-column="10" />
+            <state relative-caret-position="1380">
+              <caret line="92" column="35" lean-forward="true" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
               <folding>
                 <element signature="e#68#83#0" expanded="true" />
               </folding>
@@ -28,10 +30,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py">
+        <entry file="file://$PROJECT_DIR$/add_table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="15">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/table.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/cell_range.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/utils/cell.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="337" lean-forward="true" selection-start-line="337" selection-end-line="337" />
             </state>
           </provider>
         </entry>
@@ -51,6 +98,7 @@
       <find>BB32</find>
       <find>row</find>
       <find>Y</find>
+      <find>ref</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -59,21 +107,33 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/add_table.py" />
         <option value="$PROJECT_DIR$/hello.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="954" />
+    <option name="width" value="2513" />
+    <option name="height" value="1320" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="test_xlsx_writer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/PycharmProjects/test_xlsx_writer" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,7 +145,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -110,7 +169,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.hello">
+    <configuration name="add_table" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test_xlsx_writer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/add_table.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test_xlsx_writer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +215,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.hello" />
+        <item itemvalue="Python.add_table" />
       </list>
     </recent_temporary>
   </component>
@@ -151,24 +232,33 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="954" extended-state="0" />
+    <frame x="2" y="23" width="2560" height="1320" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15934066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08625443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Project Explorer" order="3" />
       <window_info id="Job Explorer" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Debug" order="2" visible="true" weight="0.37663886" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.23568465" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.2657926" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30870083" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3294606" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.25975105" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294606" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.21493776" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32962137" />
       <window_info anchor="bottom" id="Console" order="11" />
@@ -177,22 +267,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="FAQ Robot" order="3" />
     </layout>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hello.py</url>
-          <line>377</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hello.py</url>
-          <line>367</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -244,6 +318,16 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>rd</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sheet['AR31']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>sheet.merged_cells[merg_cell]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -278,16 +362,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>simple_cell + str(row)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>simple_cell + ':'.join(merge_cell) + str(row)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
@@ -296,7 +370,13 @@
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/styles/borders.py" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/worksheet.py" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/xlsxwriter/workbook.py" />
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py" />
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="337" lean-forward="true" selection-start-line="337" selection-end-line="337" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/utils/cell.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -306,31 +386,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/cell_range.py" />
-    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/styles/borders.py">
+    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/styles/borders.py" />
+    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/reader/excel.py" />
+    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py" />
+    <entry file="file://$PROJECT_DIR$/add_table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="15">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/reader/excel.py">
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        <state relative-caret-position="343">
+          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="366" column="10" selection-start-line="366" selection-start-column="8" selection-end-line="366" selection-end-column="10" />
+        <state relative-caret-position="1380">
+          <caret line="92" column="35" lean-forward="true" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
           <folding>
             <element signature="e#68#83#0" expanded="true" />
           </folding>
