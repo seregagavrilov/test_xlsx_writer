@@ -53,9 +53,9 @@ def fill_cells(sheet):
     sheet['AX26'] = 'Номер документа'
     sheet['BI26'] = 'Дата создания тн'
     sheet['K33'] = 7
-    sheet['AR31'] = 'Итого количество'
-    sheet['AR32'] = 'Всего количество'
-    sheet['BQ32'] = 'Сумма без ндс'
+    # sheet['AR31'] = 'Итого количество'
+    # sheet['AR32'] = 'Всего количество'
+    # sheet['BQ32'] = 'Сумма без ндс'
 
 
 def get_sheet(workk_book):
@@ -87,16 +87,17 @@ def style_cell(sheet, cell):
                  color='FF000000')
 
 
-def delete_merged_cell(cell):
+def delete_merged_cell(cell, cell2):
     for i in sheet.merged_cells.ranges:
         # if cell in i.__str__():
-        if re.findall(r'(%s)' % cell, i.__str__()):
+        if re.findall(r'(?:^|\W)%s(?:$|\W)' % cell, i.__str__()) or \
+                re.findall(r'(?:^|\W)%s(?:$|\W)' % cell2, i.__str__()):
             sheet.merged_cells.ranges.remove(i)
             break
 
 def fill_profuct_table(sheet):
     ws = work_book.active
-    for row in range(31, 50):
+    for row in range(31, 60):
         ws.insert_rows(row)
         rd = ws.row_dimensions[row]
         rd.height = 12
@@ -105,7 +106,7 @@ def fill_profuct_table(sheet):
             for simple_cell, merge_cell in dict_cells.items():
                 merg_cell = merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)
                 cell = simple_cell + str(row)
-                delete_merged_cell(cell)
+                # delete_merged_cell(cell, merge_cell[1]+str(row))
                 sheet.merge_cells(merg_cell)
                 style_cell(sheet, cell)
                 sheet[cell].value = 'val' + str(row)
@@ -119,6 +120,7 @@ if __name__ == '__main__':
     # wb = Workbook()
     # work_book = wb.active
     sheet = work_book.active
+    # sheet.merged_cells.ranges.clear()
     fill_profuct_table(sheet)
     fill_cells(sheet)
     work_book.save('test_home_look.xlsx')
