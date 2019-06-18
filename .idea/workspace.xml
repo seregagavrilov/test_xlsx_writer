@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="950a858d-6b69-492d-96d9-7b674f21eb42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/add_table.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.~lock.test_home_look.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.~lock.torg-12.xlsm#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_home_look.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_home_look.xls" beforeDir="false" afterPath="$PROJECT_DIR$/test_home_look.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_home_look.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test_home_look.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/torg-12 copy.xlsm" beforeDir="false" afterPath="$PROJECT_DIR$/torg-12 copy.xlsm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/torg-12.xlsm" beforeDir="false" afterPath="$PROJECT_DIR$/torg-12.xlsm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,16 +17,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="test_xlsx_writer" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="783">
+              <caret line="158" selection-start-line="158" selection-end-line="158" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -33,10 +32,78 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2019.1/python_stubs/1449466591/builtins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="105" selection-start-line="105" selection-end-line="105" />
+            <state relative-caret-position="293">
+              <caret line="3650" column="8" selection-start-line="3650" selection-start-column="8" selection-end-line="3650" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/descriptors/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/worksheet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="702" selection-start-line="702" selection-end-line="702" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/add_table.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/cell_range.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="321" selection-start-line="321" selection-end-line="321" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/workbook/workbook.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="246" selection-start-line="246" selection-end-line="246" />
             </state>
           </provider>
         </entry>
@@ -57,6 +124,10 @@
       <find>row</find>
       <find>Y</find>
       <find>ref</find>
+      <find>insert</find>
+      <find>delete_merged_cell</find>
+      <find>47</find>
+      <find>fill_cells</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,34 +141,34 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="850" />
-    <option name="width" value="830" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="2513" />
+    <option name="height" value="1320" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="test_xlsx_writer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="test_xlsx_writer" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
               <item name="test_xlsx_writer" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/PycharmProjects/test_xlsx_writer" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="test_xlsx_writer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_xlsx_writer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -200,24 +271,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="748" y="0" width="932" height="1050" extended-state="6" />
+    <frame x="2" y="23" width="2560" height="1320" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859154" visible="true" weight="0.36179775" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859154" visible="true" weight="0.15360378" />
       <window_info id="Structure" order="1" sideWeight="0.50143266" side_tool="true" weight="0.14617941" />
-      <window_info id="Favorites" order="2" sideWeight="0.50140846" side_tool="true" visible="true" weight="0.36179775" />
+      <window_info id="Favorites" order="2" sideWeight="0.50140846" side_tool="true" weight="0.36179775" />
       <window_info id="Project Explorer" order="3" />
       <window_info id="Job Explorer" order="4" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.42528737" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294606" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49940923" weight="0.19751038" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.3294606" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2580982" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49940923" weight="0.3294606" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.20082988" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294606" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.27063742" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2473029" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5005908" side_tool="true" weight="0.3294606" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32962137" />
       <window_info anchor="bottom" id="Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -226,15 +298,21 @@
       <window_info anchor="right" id="FAQ Robot" order="3" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hello.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>[i for i in sheet.merged_cells.ranges if 'K39' in i]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>for i in sheet.merged_cells.ranges: print(i)</expression-string>
+        <expression-string>sheet.merged_cells.ranges</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -245,84 +323,90 @@
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for i in sheet.merged_cells.ranges: 
-    if 'K39' in i: 
-        print('K39')</expression-string>
+        <expression-string>for i in sheet.merged_cells.ranges: print(i)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>for i in sheet.merged_cells.ranges:
+    print(i.__str__())</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sheet.merged_cells.ranges[0].__str__()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>sheet.merged_cells.ranges[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
         <expression-string>for i in sheet.merged_cells.ranges: 
-    if 'K39' in i: 
         print(i)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
         <expression-string>for i in sheet.merged_cells.ranges: 
-    if 'K39' in i: print(i)</expression-string>
+    if '47'in i: 
+        print(i)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>for i in sheet.merged_cells.ranges: if 'K39' in i: print(i)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sheet.merged_cells.ranges</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>'BY38' in sheet.merged_cells.ranges</expression-string>
+        <expression-string>for i in sheet.merged_cells.ranges: 
+    if i == 47: 
+        print(i)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>rd</expression-string>
+        <expression-string>copiedData</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sheet['AR31']</expression-string>
+        <expression-string>copiedData[countRow][countCol]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>sheet.merged_cells[merg_cell]</expression-string>
+        <expression-string>rangeSelected</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)</expression-string>
+        <expression-string>rowSelected</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>simple_cell + str(row) + merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)</expression-string>
+        <expression-string>sheet.row_dimensions[51]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>':'.join(merge_cell) + str(row)</expression-string>
+        <expression-string>sheet[51]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>'31:31'.join(merge_cell) + str(row)</expression-string>
+        <expression-string>sheet</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>simple_cell + str(row) + '31:31'.join(merge_cell) + str(row)</expression-string>
+        <expression-string>sheet.merged_cells.ranges</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>simple_cell + str(row) + ':'.join(merge_cell) + str(row)</expression-string>
+        <expression-string>sheet.merged_cells.ranges.remove()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -334,7 +418,6 @@
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/styles/borders.py" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/worksheet.py" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/xlsxwriter/workbook.py" />
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py" />
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/utils/cell.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_breakpoints.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -346,13 +429,8 @@
     <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/cell_range.py" />
     <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/styles/borders.py" />
     <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/reader/excel.py" />
-    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../osla-api/virtualenv/lib/python3.7/site-packages/openpyxl/packaging/workbook.py" />
+    <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/table.py" />
     <entry file="file://$PROJECT_DIR$/add_table.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -360,11 +438,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/table.py" />
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/workbook/workbook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="246" selection-start-line="246" selection-end-line="246" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/worksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="702" selection-start-line="702" selection-end-line="702" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/table.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/descriptors/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/worksheet/cell_range.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/osla-api/lib/python3.7/site-packages/openpyxl/utils/cell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2019.1/python_stubs/1449466591/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="3650" column="8" selection-start-line="3650" selection-start-column="8" selection-end-line="3650" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="321" selection-start-line="321" selection-end-line="321" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="783">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
