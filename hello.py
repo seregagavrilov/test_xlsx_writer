@@ -2,6 +2,7 @@ import openpyxl
 from openpyxl.styles.borders import Border, Side
 from openpyxl.styles import Alignment, Font
 from openpyxl import Workbook
+from openpyxl.worksheet.merge import MergeCell, MergedCell
 wb = Workbook()
 from copy import copy
 from openpyxl.worksheet.copier import WorksheetCopy
@@ -156,22 +157,59 @@ if __name__ == '__main__':
     fill_product_table(sheet_head)
     row_append = 51
     col = 1
+    row_f = 1
+    for row in sheet_footer.rows:
+        rd_f = sheet_footer.row_dimensions[row_f]
+        rd_h = sheet_head.row_dimensions[row_append]
+        rd_h.height = rd_f.height
+        row_f +=1
+        for cell in row:
+            # if type(cell) != MergedCell:
+            new_cell = sheet_head.cell(
+                            row=row_append,
+                            column=col,
+                            value=cell.value
+                        )
+            # try:
+            #     new_cell.value = cell.value
+            # except:
+            #     print(cell.value)
+            # if cell.has_style:
+
+            new_cell._style = copy(cell._style)
+            col += 1
+        col = 1
+        row_append += 1
+            # elif type(cell) == MergedCell:
+                # merge_cell = sheet_head.merge_cells()
+                # if cell.has_style:
+                #     new_cell = sheet_head.cell(
+                #         row=row_append,
+                #         column=col,
+                #         value=cell.value
+                #     )
+                #     if cell.has_style:
+                #         merge_cell._style = copy(cell._style)
+                # print(cell)
+                # new_cell = sheet_head.cell(
+                #     row=row_append,
+                #     column=col,
+                #     value=cell.value
+                # )
+                # if cell.has_style:
+                #         new_cell._style = copy(cell._style)
     for row in sheet_footer.rows:
         for cell in row:
-            if 'Merged' not in cell.__str__():
-                if cell.has_style:
-                    new_cell = sheet_head.cell(
-                        row=row_append,
-                        column=col,
-                        value=cell.value
+            for c in cell.parent.merged_cells.ranges:
+                if cell.coordinate in c.coord:
+                    sheet_head.merge_cells(
+                        start_column=c.min_col,
+                        start_row=c.min_row +51,
+                        end_column=c.max_col,
+                        end_row=c.max_row+51,
                     )
-                    new_cell._style = copy(cell._style)
-            else:
-                sheet_head.cell(
-                    row=row_append,
-                    column=col,
-                    value=cell.value
-                )
+
+
             # else:
             #     new_cell.font = copy(cell.font)
             #     new_cell.border = copy(cell.border)
