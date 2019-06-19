@@ -1,8 +1,14 @@
 import openpyxl
 from openpyxl.styles.borders import Border, Side
 from openpyxl.styles import Alignment, Font
+from openpyxl import Workbook
+wb = Workbook()
 from copy import copy
+from openpyxl.worksheet.copier import WorksheetCopy
 import re
+
+from openpyxl.worksheet.merge import MergeCells
+from openpyxl.worksheet.cell_range import CellRange
 
 TORG_12_TABLE_CELLS = {
     'row_number': {'A': ['A', 'C']},
@@ -51,10 +57,10 @@ def get_sheet(workk_book):
 
 def style_cell(sheet, cell):
     sheet[cell].border = Border(
-        left=Side(style='thin'),
-        right=Side(style='thin'),
-        top=Side(style='thin'),
-        bottom=Side(style='thin')
+        left=Side(style='medium'),
+        right=Side(style='medium'),
+        top=Side(style='medium'),
+        bottom=Side(style='medium')
     )
     sheet[cell].alignment = Alignment(
                     horizontal='general',
@@ -74,26 +80,25 @@ def style_cell(sheet, cell):
                  color='FF000000')
 
 
-def delete_merged_cell(row):
-    count = len(sheet.merged_cells.ranges)
-    try:
-        for i in range(count):
-            if re.findall(r'%s' % str(row), sheet.merged_cells.ranges[i].__str__()):
-                end_list = len(sheet.merged_cells.ranges) - 1
-                el = sheet.merged_cells.ranges[i]
-                sheet.merged_cells.ranges[i] = sheet.merged_cells.ranges[end_list]
-                sheet.merged_cells.ranges[end_list] = el
-                sheet.merged_cells.ranges.remove(sheet.merged_cells.ranges[end_list])
-    except IndexError:
-        pass
+# def delete_merged_cell(row):
+#     count = len(sheet.merged_cells.ranges)
+#     try:
+#         for i in range(count):
+#             if re.findall(r'%s' % str(row), sheet.merged_cells.ranges[i].__str__()):
+#                 end_list = len(sheet.merged_cells.ranges) - 1
+#                 el = sheet.merged_cells.ranges[i]
+#                 sheet.merged_cells.ranges[i] = sheet.merged_cells.ranges[end_list]
+#                 sheet.merged_cells.ranges[end_list] = el
+#                 sheet.merged_cells.ranges.remove(sheet.merged_cells.ranges[end_list])
+#     except IndexError:
+#         pass
 
 
-def fill_profuct_table(sheet):
+def fill_product_table(sheet):
     ws = work_book.active
-    last_row = 0
     for row in range(31, 50):
         ws.insert_rows(row)
-        delete_merged_cell(row)
+        # delete_merged_cell(row)
         rd = ws.row_dimensions[row]
         rd.height = 12
         for key, val in TORG_12_TABLE_CELLS.items():
@@ -101,10 +106,9 @@ def fill_profuct_table(sheet):
             for simple_cell, merge_cell in dict_cells.items():
                 merg_cell = merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)
                 cell = simple_cell + str(row)
-                sheet.merge_cells(merg_cell)
                 style_cell(sheet, cell)
+                sheet.merge_cells(merg_cell)
                 sheet[cell].value = 'val' + str(row)
-    last_row = 52
 
     # sheet.merge_cells('D32:X32')
     # sheet['D32:X32'] = 'Товарная накладная имеет приложение на'
@@ -115,6 +119,7 @@ def fill_profuct_table(sheet):
     # sheet.merge_cells('BE71:BF71')
     # sheet.merge_cells('BI71:BS71')
     # sheet.merge_cells('CC58:CL58')
+
 
 
 def copyRange(startCol, startRow, endCol, endRow, sheet):
@@ -142,32 +147,48 @@ def pasteRange(startCol, startRow, endCol, endRow, sheetReceiving, copiedData):
 
 if __name__ == '__main__':
     work_book = openpyxl.load_workbook(
-        'torg-12.xlsm', guess_types=True
+        'torg-12.xlsm'
     )
 
-    # wb = Workbook()
-    # work_book = wb.active
-    sheet = work_book['torg-12_sheet (2)']
-    sheet_footer = work_book['torg-12_sheet']
-    # sheet.merged_cells.ranges.clear()
-    fill_profuct_table(sheet)
+    sheet_footer = work_book['footer']
 
-    # data = copyRange(1, 1, 95, 27, sheet_footer)
-    # pasteRange(1, 51, 95, 76, sheet, data)
-    from copy import copy
-
+    sheet_head = work_book['Head']
+    fill_product_table(sheet_head)
+    row_append = 51
+    col = 1
     for row in sheet_footer.rows:
         for cell in row:
-            new_cell = sheet.cell(row=cell.row, column=cell.col_idx,
-                                      value=cell.value)
-            if cell.has_style:
-                new_cell.font = copy(cell.font)
-                new_cell.border = copy(cell.border)
-                new_cell.fill = copy(cell.fill)
-                new_cell.number_format = copy(cell.number_format)
-                new_cell.protection = copy(cell.protection)
-                new_cell.alignment = copy(cell.alignment)
+            if 'Merged' not in cell.__str__():
+                if cell.has_style:
+                    new_cell = sheet_head.cell(
+                        row=row_append,
+                        column=col,
+                        value=cell.value
+                    )
+                    new_cell._style = copy(cell._style)
+            else:
+                sheet_head.cell(
+                    row=row_append,
+                    column=col,
+                    value=cell.value
+                )
+            # else:
+            #     new_cell.font = copy(cell.font)
+            #     new_cell.border = copy(cell.border)
+            #     new_cell.fill = copy(cell.fill)
+            #     new_cell.number_format = copy(cell.number_format)
+            #     new_cell.protection = copy(cell.protection)
+            #     new_cell.alignment = copy(cell.alignment)
+            #
+            #     # new_cell.coordinate = cord
+            #     new_cell.row = row_append
+            #     new_cell.column = col
+            #
+            #     new_cell = copy(cell)
+            #     new_cell.parent = sheet_head
+            col += 1
+        col = 1
+        row_append += 1
 
+    work_book.save("test_result_wb.xlsx")
 
-
-    work_book.save('test_home_look.xlsx')
