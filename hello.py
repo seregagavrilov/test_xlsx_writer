@@ -1,6 +1,7 @@
 import openpyxl
 from openpyxl.styles.borders import Border, Side
 from openpyxl.styles import Alignment, Font
+from copy import copy
 import re
 
 TORG_12_TABLE_CELLS = {
@@ -141,7 +142,7 @@ def pasteRange(startCol, startRow, endCol, endRow, sheetReceiving, copiedData):
 
 if __name__ == '__main__':
     work_book = openpyxl.load_workbook(
-        'torg-12.xlsm',
+        'torg-12.xlsm', guess_types=True
     )
 
     # wb = Workbook()
@@ -151,8 +152,21 @@ if __name__ == '__main__':
     # sheet.merged_cells.ranges.clear()
     fill_profuct_table(sheet)
 
-    data = copyRange(1, 1, 95, 27, sheet_footer)
-    pasteRange(1, 51, 95, 76, sheet, data)
+    # data = copyRange(1, 1, 95, 27, sheet_footer)
+    # pasteRange(1, 51, 95, 76, sheet, data)
+    from copy import copy
+
+    for row in sheet_footer.rows:
+        for cell in row:
+            new_cell = sheet.cell(row=cell.row, column=cell.col_idx,
+                                      value=cell.value)
+            if cell.has_style:
+                new_cell.font = copy(cell.font)
+                new_cell.border = copy(cell.border)
+                new_cell.fill = copy(cell.fill)
+                new_cell.number_format = copy(cell.number_format)
+                new_cell.protection = copy(cell.protection)
+                new_cell.alignment = copy(cell.alignment)
 
 
 
