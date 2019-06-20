@@ -9,31 +9,14 @@ from openpyxl.worksheet.copier import WorksheetCopy
 import re
 
 
-TORG_12_TABLE_CELLS = {
-    'row_number': {'A': ['A', 'C']},
-    'product_name': {'D': ['D','S']},
-    'kod': {'T': ['T', 'W']},
-    'measurement': {'X': ['X', 'AB']},
-    'okey_kod': {'AC': ['AC', 'AG']},
-    'packaging_type': {'AH': ['AH', 'AL']},
-    'place': {'AM': ['AM', 'AQ']},
-    'count_in_place': {'AR': ['AR', 'AV']},
-    'mass': {'AW': ['AW', 'BA']},
-    'count': {'BB': ['BB', 'BG']},
-    'coast': {'BH': ['BH', 'BP']},
-    'sum_without_vat': {'BQ':['BQ', 'BW']},
-    'vat': {'BX': ['BX', 'CA']},
-    'vat_sum': {'CB': ['CB', 'CH']},
-    'sum_with_vat': {'CI': ['CI', 'CQ']}
-}
+from excel_documen_settings import TORG_12_TABLE_CELLS
+from excel_documen_settings import TORG_12_TABLE_RESULT_CELLS
 
-TORG_12_TABLE_RESULT_CELLS = {
 
-}
-
-TORG_12_CELLS = {
-
-}
+from excel_documen_settings import TORG_12_START_TABLE_HEAD
+from excel_documen_settings import TORG_12_START_PAGE_PRINT_AREA
+from excel_documen_settings import TORG_12_END_PAGE_PRINT_AREA
+from excel_documen_settings import TORG_12_END_PRODUCT_TABLE
 
 
 def fill_cells(sheet):
@@ -48,10 +31,6 @@ def fill_cells(sheet):
     # sheet['AR31'] = 'Итого количество'
     # sheet['AR32'] = 'Всего количество'
     # sheet['BQ32'] = 'Сумма без ндс'
-
-
-def get_sheet(workk_book):
-    return workk_book['стр1']
 
 
 def style_cell(sheet, cell):
@@ -91,24 +70,7 @@ def style_cell(sheet, cell):
 #                 sheet.merged_cells.ranges.remove(sheet.merged_cells.ranges[end_list])
 #     except IndexError:
 #         pass
-TORG_12_START_TABLE_HEAD = 28
-TORG_12_START_PAGE_PRINT_AREA = 1
-TORG_12_END_PAGE_PRINT_AREA = 63
 
-def fill_product_table(sheet):
-    ws = work_book.active
-    for row in range(31, 35):
-        ws.insert_rows(row)
-        rd = ws.row_dimensions[row]
-        rd.height = 12
-        for key, val in TORG_12_TABLE_CELLS.items():
-            dict_cells = TORG_12_TABLE_CELLS.get(key)
-            for simple_cell, merge_cell in dict_cells.items():
-                merg_cell = merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)
-                cell = simple_cell + str(row)
-                style_cell(sheet, cell)
-                sheet.merge_cells(merg_cell)
-                sheet[cell].value = 'val' + str(row)
 
 def copy_merged_cells(original_sheet, distenetion_sheet, start_row):
     col = 1
@@ -162,24 +124,56 @@ def copy_simple_cells(original_sheet, distenetion_sheet, start_row):
         start_row += 1
 
 
-def add_table(sheet_table, main_sheet):
-    copy_merged_cells(sheet_table, main_sheet, start_sheet)
-    fill_product_table(sheet_head)
+def fill_product_table(sheet, sheet_table, start_table_head, end_page, row_fill_remained=70):
+    # TODO do not forget about change to real data
+    copy_merged_cells(sheet_table, sheet, start_table_head)
+    global TORG_12_END_PRODUCT_TABLE
+    #for example
+    start_prod = start_table_head + 3
+    for row in range(start_prod, row_fill_remained):
+        sheet.insert_rows(row)
+        rd = sheet.row_dimensions[row]
+        rd.height = 12
+        for key, val in TORG_12_TABLE_CELLS.items():
+            dict_cells = TORG_12_TABLE_CELLS.get(key)
+            for simple_cell, merge_cell in dict_cells.items():
+                merg_cell = merge_cell[0]+str(row) + ':' + merge_cell[1]+str(row)
+                cell = simple_cell + str(row)
+                style_cell(sheet, cell)
+                sheet.merge_cells(merg_cell)
+                sheet[cell].value = 'val' + str(row)
+        end_page += 1
+        TORG_12_END_PRODUCT_TABLE =+ 1
+        if end_page >= TORG_12_END_PAGE_PRINT_AREA:
+            row_fill_remained = row_fill_remained - end_page
+            start_table_head += end_page
+            return fill_product_table(sheet, sheet_table, start_table_head, 1, row_fill_remained)
+
+
+def add_tables(main_sheet, sheet_table, start_table_head, end_page):
+    end_page += start_table_head
+    fill_product_table(main_sheet, sheet_table, start_table_head, end_page)
+
+
+def add_footer(sheet_footer, main_sheet, footer_start_row):
+    copy_merged_cells(sheet_footer, main_sheet, footer_start_row)
+    copy_simple_cells(sheet_footer, main_sheet, footer_start_row)
 
 
 if __name__ == '__main__':
     work_book = openpyxl.load_workbook(
         'torg-12.xlsm'
     )
-    end_sheet = 66
-    start_sheet = 28
-    sheet_footer = work_book['footer']
+
     sheet_head = work_book['Head copy']
     sheet_table = work_book['table']
-    copy_merged_cells(sheet_table, sheet_head, TORG_12_START_TABLE_HEAD)
-    fill_product_table(sheet_head)
-    copy_merged_cells(sheet_footer, sheet_head, 36)
-    copy_simple_cells(sheet_footer, sheet_head, 36)
+    sheet_footer = work_book['footer']
+    start_page = TORG_12_START_PAGE_PRINT_AREA
+    start_table_head = TORG_12_START_TABLE_HEAD
+    # copy_merged_cells(sheet_table, sheet_head, TORG_12_START_TABLE_HEAD)
+    # fill_product_table(sheet_head)
+    add_tables(sheet_head, sheet_table, start_table_head, 1)
+    add_footer(sheet_footer, sheet_head, 100)
     # copy_filled_sheet(sheet_table, sheet_head, start_sheet)
     # sheet_head.print_area = "A5:CF95"
 
