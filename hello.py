@@ -8,8 +8,6 @@ from copy import copy
 from openpyxl.worksheet.copier import WorksheetCopy
 import re
 
-from openpyxl.worksheet.merge import MergeCells
-from openpyxl.worksheet.cell_range import CellRange
 
 TORG_12_TABLE_CELLS = {
     'row_number': {'A': ['A', 'C']},
@@ -93,13 +91,14 @@ def style_cell(sheet, cell):
 #                 sheet.merged_cells.ranges.remove(sheet.merged_cells.ranges[end_list])
 #     except IndexError:
 #         pass
-
+TORG_12_START_TABLE_HEAD = 28
+TORG_12_START_PAGE_PRINT_AREA = 1
+TORG_12_END_PAGE_PRINT_AREA = 63
 
 def fill_product_table(sheet):
     ws = work_book.active
-    for row in range(31, 50):
+    for row in range(31, 35):
         ws.insert_rows(row)
-        # delete_merged_cell(row)
         rd = ws.row_dimensions[row]
         rd.height = 12
         for key, val in TORG_12_TABLE_CELLS.items():
@@ -111,122 +110,82 @@ def fill_product_table(sheet):
                 sheet.merge_cells(merg_cell)
                 sheet[cell].value = 'val' + str(row)
 
-    # sheet.merge_cells('D32:X32')
-    # sheet['D32:X32'] = 'Товарная накладная имеет приложение на'
+def copy_merged_cells(original_sheet, distenetion_sheet, start_row):
+    col = 1
+    row_f = 1
+    save_srt_row = start_row -1
+    for row in original_sheet.rows:
+        rd_f = original_sheet.row_dimensions[row_f]
+        rd_h = sheet_head.row_dimensions[start_row]
+        rd_h.height = rd_f.height
+        row_f += 1
+        start_row += 1
+    for row in original_sheet.rows:
+        for cell in row:
+            for c in cell.parent.merged_cells.ranges:
+                if re.findall(r'^(?:^|\W)%s(?:$|\W)' % str(cell.coordinate), c.coord):
+                    distenetion_sheet.merge_cells(
+                        start_column=c.min_col,
+                        start_row=c.min_row + save_srt_row,
+                        end_column=c.max_col,
+                        end_row=c.max_row + save_srt_row,
+                    )
+                    addres = str(c.min_row + save_srt_row)
+                    my_cell = ''.join(x for x in cell.coordinate if x.isalpha()) + addres
+                    merged_my_cell = distenetion_sheet.merged_cells.ranges[len(distenetion_sheet.merged_cells.ranges) - 1].__str__()
+                    for col_1 in distenetion_sheet[merged_my_cell]:
+                        for col_2 in col_1:
+                            col_2._style = copy(cell._style)
+                    distenetion_sheet[my_cell].value = copy(cell.value)
+            col += 1
+        col = 1
+        start_row += 1
 
-    # sheet.merge_cells('BH58:BU58')
-    # sheet.merge_cells('X62:AR62')
-    # sheet.merge_cells('CC58:CL58')
-    # sheet.merge_cells('BE71:BF71')
-    # sheet.merge_cells('BI71:BS71')
-    # sheet.merge_cells('CC58:CL58')
+
+def copy_simple_cells(original_sheet, distenetion_sheet, start_row):
+    col =1
+    for row in original_sheet.rows:
+        for cell in row:
+            new_cell = distenetion_sheet.cell(
+                row=start_row,
+                column=col,
+                value=cell.value)
+            if cell.has_style:
+                new_cell.font = copy(cell.font)
+                new_cell.border = copy(cell.border)
+                new_cell.fill = copy(cell.fill)
+                new_cell.number_format = copy(cell.number_format)
+                new_cell.protection = copy(cell.protection)
+                new_cell.alignment = copy(cell.alignment)
+            col += 1
+        col = 1
+        start_row += 1
 
 
+def add_table(sheet_table, main_sheet):
+    copy_merged_cells(sheet_table, main_sheet, start_sheet)
+    fill_product_table(sheet_head)
 
-def copyRange(startCol, startRow, endCol, endRow, sheet):
-    rangeSelected = []
-    # Loops through selected Rows
-    for i in range(startRow, endRow + 1, 1):
-        # Appends the row to a RowSelected list
-        rowSelected = []
-        for j in range(startCol, endCol + 1, 1):
-            rowSelected.append(sheet.cell(row=i, column=j).value)
-        # Adds the RowSelected List and nests inside the rangeSelected
-        rangeSelected.append(rowSelected)
-
-    return rangeSelected
-
-
-def pasteRange(startCol, startRow, endCol, endRow, sheetReceiving, copiedData):
-    countRow = 0
-    for i in range(startRow, endRow + 1, 1):
-        countCol = 0
-        for j in range(startCol, endCol + 1, 1):
-            sheetReceiving.cell(row=i, column=j).value = copiedData[countRow][countCol]
-            countCol += 1
-        countRow += 1
 
 if __name__ == '__main__':
     work_book = openpyxl.load_workbook(
         'torg-12.xlsm'
     )
-
+    end_sheet = 66
+    start_sheet = 28
     sheet_footer = work_book['footer']
-
-    sheet_head = work_book['Head']
+    sheet_head = work_book['Head copy']
+    sheet_table = work_book['table']
+    copy_merged_cells(sheet_table, sheet_head, TORG_12_START_TABLE_HEAD)
     fill_product_table(sheet_head)
-    row_append = 51
-    col = 1
-    row_f = 1
-    for row in sheet_footer.rows:
-        rd_f = sheet_footer.row_dimensions[row_f]
-        rd_h = sheet_head.row_dimensions[row_append]
-        rd_h.height = rd_f.height
-        row_f +=1
-        for cell in row:
-            # if type(cell) != MergedCell:
-            new_cell = sheet_head.cell(
-                            row=row_append,
-                            column=col,
-                            value=cell.value
-                        )
-            # try:
-            #     new_cell.value = cell.value
-            # except:
-            #     print(cell.value)
-            # if cell.has_style:
-
-            new_cell._style = copy(cell._style)
-            col += 1
-        col = 1
-        row_append += 1
-            # elif type(cell) == MergedCell:
-                # merge_cell = sheet_head.merge_cells()
-                # if cell.has_style:
-                #     new_cell = sheet_head.cell(
-                #         row=row_append,
-                #         column=col,
-                #         value=cell.value
-                #     )
-                #     if cell.has_style:
-                #         merge_cell._style = copy(cell._style)
-                # print(cell)
-                # new_cell = sheet_head.cell(
-                #     row=row_append,
-                #     column=col,
-                #     value=cell.value
-                # )
-                # if cell.has_style:
-                #         new_cell._style = copy(cell._style)
-    for row in sheet_footer.rows:
-        for cell in row:
-            for c in cell.parent.merged_cells.ranges:
-                if cell.coordinate in c.coord:
-                    sheet_head.merge_cells(
-                        start_column=c.min_col,
-                        start_row=c.min_row +51,
-                        end_column=c.max_col,
-                        end_row=c.max_row+51,
-                    )
+    copy_merged_cells(sheet_footer, sheet_head, 36)
+    copy_simple_cells(sheet_footer, sheet_head, 36)
+    # copy_filled_sheet(sheet_table, sheet_head, start_sheet)
+    # sheet_head.print_area = "A5:CF95"
 
 
-            # else:
-            #     new_cell.font = copy(cell.font)
-            #     new_cell.border = copy(cell.border)
-            #     new_cell.fill = copy(cell.fill)
-            #     new_cell.number_format = copy(cell.number_format)
-            #     new_cell.protection = copy(cell.protection)
-            #     new_cell.alignment = copy(cell.alignment)
-            #
-            #     # new_cell.coordinate = cord
-            #     new_cell.row = row_append
-            #     new_cell.column = col
-            #
-            #     new_cell = copy(cell)
-            #     new_cell.parent = sheet_head
-            col += 1
-        col = 1
-        row_append += 1
+    # copy_filled_sheet(sheet_footer, sheet_head, 52)
+    # fill_footer(sheet_footer, 51)
 
     work_book.save("test_result_wb.xlsx")
 
